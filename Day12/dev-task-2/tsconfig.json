@@ -1,0 +1,62 @@
+{
+  "compilerOptions": {
+    /* Language & Environment */
+    "target": "ES2020",
+    "lib": [
+      "ES2020"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    /* Paths */
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "paths": {
+      "@config/*": [
+        "config/*"
+      ],
+      "@queues/*": [
+        "queues/*"
+      ],
+      "@workers/*": [
+        "workers/*"
+      ],
+      "@services/*": [
+        "services/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ]
+    },
+    /* Strictness */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    /* Interop */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    /* Output */
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "declaration": false,
+    /* Performance */
+    "skipLibCheck": true,
+    /* Node */
+    "types": [
+      "node",
+      "jest",
+      "express"
+    ],
+    "ignoreDeprecations": "6.0"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
