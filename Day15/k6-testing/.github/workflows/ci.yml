@@ -1,0 +1,26 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run k6 test
+        uses: grafana/k6-action@v0.3.0
+        with:
+          filename: k6/load-test.js
+        env:
+          BASE_URL: http://your-api-url
+
+      - name: Helm Lint
+        run: helm lint helm/node-api
+
+      - name: Helm Template Diff
+        run: helm template helm/node-api

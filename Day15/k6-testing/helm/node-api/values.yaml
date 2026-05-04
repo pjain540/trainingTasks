@@ -1,0 +1,21 @@
+replicaCount: 2
+
+image:
+  repository: your-dockerhub/node-api
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: "500m"
+  requests:
+    cpu: "200m"
+
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  cpuUtilization: 60
